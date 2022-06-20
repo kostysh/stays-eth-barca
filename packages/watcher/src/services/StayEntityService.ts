@@ -13,10 +13,14 @@ export default class StayEntityService {
   }
 
   public async process() {
-    await this.getTokens();
-    await this.makeTokenEntities();
-    await this.fillNeededFacilitiesAndSpaces();
-    await this.setLastBlockNumber();
+    try {
+      await this.getTokens();
+      await this.makeTokenEntities();
+      await this.fillNeededFacilitiesAndSpaces();
+      await this.setLastBlockNumber();
+    } catch (e) {
+      console.log(e.message);
+    }
   }
 
   public async getTokens() {

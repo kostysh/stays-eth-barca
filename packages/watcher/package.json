@@ -11,12 +11,13 @@
     "build": "tsc -p tsconfig-build.json",
     "test": "npx mocha -r ts-node/register test/**/*.spec.ts",
     "lint": "npx eslint . --ext .ts",
-    "lint:fix": "npx eslint . --ext .ts --fix"
+    "lint:fix": "npx eslint . --ext .ts --fix",
+    "dev": "NODE_ENV=development nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.6.2",
-    "sequelize": "^6.19.0",
-    "sqlite3": "^5.0.4"
+    "@sendgrid/mail": "^7.7.0",
+    "sequelize": "^6.21.0",
+    "sqlite3": "^5.0.8"
   },
   "devDependencies": {
     "@types/mocha": "9.1.0",
@@ -36,6 +37,8 @@
     "dotenv": "^12.0.0",
     "@types/node": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "5.12.0",
-    "@typescript-eslint/parser": "5.12.0"
+    "@typescript-eslint/parser": "5.12.0",
+    "nodemon": "^2.0.16",
+    "sequelize-cli": "^6.4.1"
   }
 }
